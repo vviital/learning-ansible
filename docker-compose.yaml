@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  ansible:
+    build: .
+    stdin_open: true
+    tty: true
+    depends_on:
+      - web1
+      - web2
+      - db1
+    volumes:
+      - .:/etc/learning-ansible    
+  web1:
+    image: python
+    stdin_open: true
+    tty: true
+  web2:
+    image: python
+    stdin_open: true
+    tty: true
+  db1:
+    image: python
+    stdin_open: true
+    tty: true     
